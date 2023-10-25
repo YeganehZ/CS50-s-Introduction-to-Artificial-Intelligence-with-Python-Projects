@@ -174,53 +174,6 @@ def minimax(board):
 
 
 
-
-'''
-def minimax(board):
-    """
-    Returns the optimal action for the current player on the board.
-    """
-    if terminal(board):
-        return utility(board)
-    else:
-        return random.choice(actions(board))
-
-
-    raise NotImplementedError
-
-def minimax(board):
-    Bestscore = -math.inf
-
-    
-    for actio in actions(board):
-        board_copy=copy.deepcopy(board)    
-        Score_F = FindBestScore(result(board,actio),0, False)
-        board=board_copy
-        if Score_F > Bestscore:
-            Bestscore = Score_F
-            Bestmove = actio
-    
-    return Bestmove
-
-
-def FindBestScore(board,depth,isMaximizng):
-
-    if terminal(board):
-        return utility(board)
-    
-    if isMaximizng:
-        best_score=-math.inf
-        for act in actions(board):
-            score=FindBestScore(result(board,act),depth+1, False)
-            best_score=max(score,best_score)       
-        return best_score
-    
-    else:
-        best_score=math.inf
-        for acti in actions(board):
-            score=FindBestScore(result(board,acti),depth+1,True)
-            best_score=min(score,best_score)       
-        return best_score
     
 
 
@@ -228,4 +181,3 @@ def FindBestScore(board,depth,isMaximizng):
 
 
 
-'''
